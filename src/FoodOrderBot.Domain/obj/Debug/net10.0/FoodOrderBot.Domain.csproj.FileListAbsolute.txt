@@ -1,0 +1,11 @@
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\bin\Debug\net10.0\FoodOrderBot.Domain.deps.json
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\bin\Debug\net10.0\FoodOrderBot.Domain.dll
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\bin\Debug\net10.0\FoodOrderBot.Domain.pdb
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\FoodOrderBot.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\FoodOrderBot.Domain.AssemblyInfoInputs.cache
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\FoodOrderBot.Domain.AssemblyInfo.cs
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\FoodOrderBot.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\FoodOrderBot.Domain.dll
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\refint\FoodOrderBot.Domain.dll
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\FoodOrderBot.Domain.pdb
+C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.Domain\obj\Debug\net10.0\ref\FoodOrderBot.Domain.dll

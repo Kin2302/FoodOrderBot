@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FoodOrderBot.API/FoodOrderBot.API.csproj" />
+    <Project Path="src/FoodOrderBot.Application/FoodOrderBot.Application.csproj" />
+    <Project Path="src/FoodOrderBot.Domain/FoodOrderBot.Domain.csproj" />
+    <Project Path="src/FoodOrderBot.Infrastructure/FoodOrderBot.Infrastructure.csproj" />
+  </Folder>
+</Solution>
