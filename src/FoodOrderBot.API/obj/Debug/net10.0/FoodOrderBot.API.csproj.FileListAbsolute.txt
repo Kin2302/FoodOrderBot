@@ -1,7 +1,0 @@
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\FoodOrderBot.API.csproj.AssemblyReference.cache
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\rpswa.dswa.cache.json
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\FoodOrderBot.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\FoodOrderBot.API.AssemblyInfoInputs.cache
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\FoodOrderBot.API.AssemblyInfo.cs
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\FoodOrderBot.API.csproj.CoreCompileInputs.cache
-C:\Users\kie7a\.gemini\antigravity-ide\scratch\FoodOrderBot\src\FoodOrderBot.API\obj\Debug\net10.0\FoodOrderBot.API.MvcApplicationPartsAssemblyInfo.cache
