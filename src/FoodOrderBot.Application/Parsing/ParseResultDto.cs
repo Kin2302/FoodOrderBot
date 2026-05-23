@@ -6,10 +6,10 @@ namespace FoodOrderBot.Application.Parsing;
 public class ParseResultDto
 {
     public List<ParsedOrderItem> Items { get; set; } = [];
-    public string ReceiverName { get; set; } = string.Empty;
-    public string ReceiverPhone { get; set; } = string.Empty;
-    public string DeliveryAddress { get; set; } = string.Empty;
-    public float Confidence { get; set; }
+    public string? ReceiverName { get; set; }
+    public string? ReceiverPhone { get; set; }
+    public string? DeliveryAddress { get; set; }
+    public double Confidence { get; set; }
 
     /// <summary>
     /// Những phần AI không chắc chắn — hiển thị cho chủ quán biết cần kiểm tra
@@ -19,8 +19,9 @@ public class ParseResultDto
 
 public class ParsedOrderItem
 {
-    public Guid MenuItemId { get; set; }
+    /// <summary>Null nếu AI không match được với menu item nào</summary>
+    public Guid? MenuItemId { get; set; }
     public string Name { get; set; } = string.Empty;
-    public int Quantity { get; set; }
+    public int Quantity { get; set; } = 1;
     public string? Note { get; set; }
 }

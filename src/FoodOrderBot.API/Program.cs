@@ -2,7 +2,11 @@ using System.Text;
 using FoodOrderBot.API.BackgroundServices;
 using FoodOrderBot.API.Hubs;
 using FoodOrderBot.API.Middleware;
+using FoodOrderBot.Application.Contracts;
+using FoodOrderBot.Domain.Interfaces;
 using FoodOrderBot.Infrastructure.Persistence;
+using FoodOrderBot.Infrastructure.Persistence.Repositories;
+using FoodOrderBot.Infrastructure.SemanticKernel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -71,12 +75,16 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
-// TODO Sprint 2: Đăng ký Application Services, Infrastructure Services
-// builder.Services.AddScoped<IOrderService, OrderService>();
-// builder.Services.AddScoped<IMessageParser, MessageParserService>();
-// builder.Services.AddScoped<IMessengerReply, MessengerClient>();
-// builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-// builder.Services.AddScoped<IRawMessageRepository, RawMessageRepository>();
+// ─── Repositories ───────────────────────────────────────────────────────────
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IRawMessageRepository, RawMessageRepository>();
+
+// ─── Application Services ────────────────────────────────────────────────────
+builder.Services.AddScoped<IMessageParser, MessageParserService>();
+// IOrderService + IMessengerReply → Sprint 3
+
+// ─── DB Initializer ──────────────────────────────────────────────────────────
+builder.Services.AddScoped<DbInitializer>();
 
 var app = builder.Build();
 
@@ -100,12 +108,12 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHub<OrderHub>("/hubs/orders");
 
-// Auto-migrate on startup (dev chỉ)
-if (app.Environment.IsDevelopment())
+// ─── DB Migration + Seed (startup) ──────────────────────────────────────────
+using (var scope = app.Services.CreateScope())
 {
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await db.Database.MigrateAsync();
+    var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+    await initializer.InitialiseAsync();  // Migrate
+    await initializer.SeedAsync();        // Seed data mẫu nếu chưa có
 }
 
 app.Run();

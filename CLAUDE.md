@@ -189,14 +189,20 @@ Dùng `OrderStateMachine.ThrowIfInvalidTransition()` trước mọi thay đổi 
 
 ## Trạng Thái Hiện Tại
 
-**Sprint 1 – Foundation**: ✅ HOÀN THÀNH (`dotnet build` → 0 errors)
+**Sprint 1 – Foundation**: ✅ HOÀN THÀNH
+**Sprint 2 – Database + AI**: ✅ CODE XONG (build 0 errors)
+- OrderRepository, RawMessageRepository ✅
+- DbInitializer (migrate + seed 1 Shop + 10 món) ✅
+- MessageParserService (Groq + SK + prompt tiếng Việt) ✅
+- DI Registration đầy đủ ✅
+- ⏳ Bước còn lại: chạy `dotnet ef migrations add InitialCreate`, điền Groq Key, `dotnet run`
 
-**Đang ở Sprint 2** — Cần làm:
-1. `OrderRepository` + `RawMessageRepository`
-2. EF Core migration (cần PostgreSQL đang chạy)
-3. Semantic Kernel + Groq integration
-4. `MessageParserService` với prompt tiếng Việt
-5. Điền logic vào `WebhookProcessingWorker`
+**Đang ở Sprint 3** — Cần làm tiếp:
+1. `Application/Orders/OrderService.cs` — implement IOrderService
+2. `Infrastructure/Facebook/MessengerClient.cs` — implement IMessengerReply
+3. `API/Controllers/OrderController.cs` — REST API đơn hàng
+4. `API/Controllers/ShopController.cs` — REST API thực đơn
+5. Logic đầy đủ cho `BackgroundServices/WebhookProcessingWorker.cs`
 
 ---
 
@@ -221,10 +227,22 @@ dotnet build
 # Chạy dev
 dotnet run --project src/FoodOrderBot.API
 
-# EF Migration (cần PostgreSQL)
+# EF Migration (cần PostgreSQL đang chạy qua Docker)
 dotnet ef migrations add <TenMigration> --project src/FoodOrderBot.Infrastructure --startup-project src/FoodOrderBot.API
 dotnet ef database update --project src/FoodOrderBot.Infrastructure --startup-project src/FoodOrderBot.API
 
-# Test ngrok
+# Test ngrok (khi cần test Facebook Webhook)
 ngrok http 5000
+```
+
+## Docker PostgreSQL (đang dùng)
+
+```yaml
+# User: admin | Password: mysecretpassword123 | DB: foodorderbot | Port: 5432
+# pgAdmin: localhost:8080 | Email: admin@admin.com | Password: adminpassword123
+```
+
+Connection string hiện tại:
+```
+Host=localhost;Port=5432;Database=foodorderbot;Username=admin;Password=mysecretpassword123
 ```
