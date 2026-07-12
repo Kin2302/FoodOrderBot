@@ -3,6 +3,9 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+.pnpm-store/
+.vs/
+
 # dotenv files
 .env
 
