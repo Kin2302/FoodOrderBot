@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "D:\\DotNet\\FoodOrderBot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\semantickernel\\messageparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\semantickernel\\messageparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\foodorderbot.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\foodorderbot.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\foodorderbot.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\foodorderbot.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\foodorderbot.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\foodorderbot.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\backgroundservices\\webhookprocessingworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\backgroundservices\\webhookprocessingworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,116 +15,51 @@
       "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\controllers\\webhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\hubs\\orderhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\hubs\\orderhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\foodorderbot.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\foodorderbot.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\foodorderbot.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\foodorderbot.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kie7a\\AppData\\Roaming\\Microsoft\\UserSecrets\\ac3d2059-92df-4e70-b90d-f94171429142\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\foodorderbot.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\foodorderbot.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\persistence\\configurations\\otherconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\persistence\\configurations\\otherconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\foodorderbot.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\foodorderbot.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\persistence\\configurations\\rawmessageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\persistence\\configurations\\rawmessageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2402F57D-428C-0E6E-4F00-F4CEF40BB564}|src\\FoodOrderBot.API\\FoodOrderBot.API.csproj|solutionrelative:src\\foodorderbot.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\persistence\\configurations\\orderconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\persistence\\configurations\\orderconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\parsing\\parseresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\parsing\\parseresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\auth\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\auth\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\contracts\\imessageparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\contracts\\imessageparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\contracts\\imessengerreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\contracts\\imessengerreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\orders\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\orders\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\orders\\dtos\\createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\orders\\dtos\\createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\orders\\orderstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\orders\\orderstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.application\\foodorderbot.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{58D228D9-2E44-EB5A-5F6B-6F0B204CC57A}|src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj|solutionrelative:src\\foodorderbot.application\\foodorderbot.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\enums\\messagesource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\enums\\messagesource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\interfaces\\irawmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\interfaces\\irawmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\entities\\rawmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\entities\\rawmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\entities\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\entities\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\entities\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\entities\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.domain\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0557F144-4AB0-24E3-9F9D-7E83F80A0422}|src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj|solutionrelative:src\\foodorderbot.domain\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|d:\\dotnet\\foodorderbot\\src\\foodorderbot.infrastructure\\facebook\\messengerclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D204516-856B-B260-D85E-E71BE4D56E64}|src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj|solutionrelative:src\\foodorderbot.infrastructure\\facebook\\messengerclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -150,8 +69,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebhookProcessingWorker.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T04:54:57.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebhookTaskQueue.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T04:44:07.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T04:37:14.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T03:57:10.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FoodOrderBot.API",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-12T03:35:21.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Program.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Program.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T03:36:34.863Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -162,419 +159,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MessageParserService.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\SemanticKernel\\MessageParserService.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\SemanticKernel\\MessageParserService.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\SemanticKernel\\MessageParserService.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\SemanticKernel\\MessageParserService.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAlwFkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T00:13:08.669Z",
+              "DocumentIndex": 5,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\README.md",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\README.md",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\README.md",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\README.md",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-07-12T02:28:16.228Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WebhookProcessingWorker.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookProcessingWorker.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowAsAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:59:10.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WebhookTaskQueue.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\BackgroundServices\\WebhookTaskQueue.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswBQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:55:38.21Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderHub.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Hubs\\OrderHub.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Hubs\\OrderHub.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Hubs\\OrderHub.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\Hubs\\OrderHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:55:44.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "WebhookController.cs",
               "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\WebhookController.cs",
               "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Controllers\\WebhookController.cs",
               "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\WebhookController.cs",
               "RelativeToolTip": "src\\FoodOrderBot.API\\Controllers\\WebhookController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAwwFcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:55:04.005Z"
+              "WhenOpened": "2026-06-13T10:01:14.661Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\Controllers\\AuthController.cs",
+              "DocumentIndex": 3,
+              "Title": "ShopController.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\ShopController.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Controllers\\ShopController.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\ShopController.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\Controllers\\ShopController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:55:03.414Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\appsettings.json",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\appsettings.json",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\appsettings.json",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-21T15:53:42.692Z"
+              "WhenOpened": "2026-06-13T13:21:52.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "FoodOrderBot.API.http",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\FoodOrderBot.API.http",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\FoodOrderBot.API.http",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\FoodOrderBot.API.http",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\FoodOrderBot.API.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-05-21T15:53:41.411Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Program.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Program.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Program.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\Program.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAIBJwDUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:53:40.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IMessengerReply.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Contracts\\IMessengerReply.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Contracts\\IMessengerReply.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Contracts\\IMessengerReply.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Contracts\\IMessengerReply.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:23:30.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "OrderDto.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Orders\\Dtos\\OrderDto.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Orders\\Dtos\\OrderDto.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Orders\\Dtos\\OrderDto.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Orders\\Dtos\\OrderDto.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:23:27.258Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IMessageParser.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Contracts\\IMessageParser.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Contracts\\IMessageParser.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Contracts\\IMessageParser.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Contracts\\IMessageParser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:22:53.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CreateOrderRequest.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Orders\\Dtos\\CreateOrderRequest.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Orders\\Dtos\\CreateOrderRequest.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Orders\\Dtos\\CreateOrderRequest.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Orders\\Dtos\\CreateOrderRequest.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:21:00.954Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "OrderStateMachine.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Orders\\OrderStateMachine.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Orders\\OrderStateMachine.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Orders\\OrderStateMachine.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Orders\\OrderStateMachine.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBMAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:10:49.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AuthDtos.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Auth\\AuthDtos.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Auth\\AuthDtos.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Auth\\AuthDtos.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Auth\\AuthDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:06:50.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ParseResultDto.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Parsing\\ParseResultDto.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\Parsing\\ParseResultDto.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\Parsing\\ParseResultDto.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\Parsing\\ParseResultDto.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:06:45.652Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "IRawMessageRepository.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Interfaces\\IRawMessageRepository.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Interfaces\\IRawMessageRepository.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Interfaces\\IRawMessageRepository.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Interfaces\\IRawMessageRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:02:20.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Interfaces\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Interfaces\\IOrderRepository.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Interfaces\\IOrderRepository.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Interfaces\\IOrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T15:01:58.11Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\Persistence\\AppDbContext.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\Persistence\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:53:25.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Shop.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\Shop.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Entities\\Shop.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\Shop.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Entities\\Shop.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:50:57.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "RawMessage.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\RawMessage.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Entities\\RawMessage.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\RawMessage.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Entities\\RawMessage.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA4AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:50:56.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\OrderItem.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Entities\\OrderItem.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\OrderItem.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Entities\\OrderItem.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA9wAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:50:48.192Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Entities\\Order.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\Order.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Entities\\Order.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAswAQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:49:20.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "MenuItem.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\MenuItem.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Entities\\MenuItem.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\MenuItem.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Entities\\MenuItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:49:09.773Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "PaymentStatus.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Enums\\PaymentStatus.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Enums\\PaymentStatus.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Enums\\PaymentStatus.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Enums\\PaymentStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:41:33.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "OrderStatus.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Enums\\OrderStatus.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Enums\\OrderStatus.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Enums\\OrderStatus.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Enums\\OrderStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:41:30.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "MessageSource.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Enums\\MessageSource.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Enums\\MessageSource.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Enums\\MessageSource.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Enums\\MessageSource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:41:24.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FoodOrderBot.Domain.csproj",
+              "Title": "FoodOrderBot.Domain",
               "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj",
               "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj",
               "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj",
               "RelativeToolTip": "src\\FoodOrderBot.Domain\\FoodOrderBot.Domain.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-21T14:27:53.765Z",
+              "WhenOpened": "2026-07-12T02:43:56.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RawMessageConfiguration.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\RawMessageConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\RawMessageConfiguration.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\RawMessageConfiguration.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\RawMessageConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:28:12.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OtherConfigurations.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OtherConfigurations.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OtherConfigurations.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OtherConfigurations.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OtherConfigurations.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAcwBUAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:28:12.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "OrderConfiguration.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OrderConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OrderConfiguration.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OrderConfiguration.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\Persistence\\Configurations\\OrderConfiguration.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwB8AAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:28:11.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\Customer.cs",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Domain\\Entities\\Customer.cs",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Domain\\Entities\\Customer.cs",
-              "RelativeToolTip": "src\\FoodOrderBot.Domain\\Entities\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:27:55.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FoodOrderBot.API.csproj",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
-              "RelativeToolTip": "src\\FoodOrderBot.API\\FoodOrderBot.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-21T14:19:54.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "FoodOrderBot.Application.csproj",
-              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj",
-              "RelativeDocumentMoniker": "src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj",
-              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj",
-              "RelativeToolTip": "src\\FoodOrderBot.Application\\FoodOrderBot.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-21T14:19:52.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "FoodOrderBot.Infrastructure.csproj",
               "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj",
               "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj",
@@ -582,7 +219,57 @@
               "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\FoodOrderBot.Infrastructure.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-21T14:19:50.018Z",
+              "WhenOpened": "2026-06-25T04:05:05.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\appsettings.json",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\appsettings.json",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-13T09:47:07.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\kie7a\\AppData\\Roaming\\Microsoft\\UserSecrets\\ac3d2059-92df-4e70-b90d-f94171429142\\secrets.json",
+              "ToolTip": "C:\\Users\\kie7a\\AppData\\Roaming\\Microsoft\\UserSecrets\\ac3d2059-92df-4e70-b90d-f94171429142\\secrets.json",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-13T10:44:52.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.API\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.API\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.API\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T13:22:01.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MessengerClient.cs",
+              "DocumentMoniker": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Facebook\\MessengerClient.cs",
+              "RelativeDocumentMoniker": "src\\FoodOrderBot.Infrastructure\\Facebook\\MessengerClient.cs",
+              "ToolTip": "D:\\DotNet\\FoodOrderBot\\src\\FoodOrderBot.Infrastructure\\Facebook\\MessengerClient.cs",
+              "RelativeToolTip": "src\\FoodOrderBot.Infrastructure\\Facebook\\MessengerClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T09:34:34.241Z",
               "EditorCaption": ""
             }
           ]

@@ -1,9 +1,14 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using FoodOrderBot.API.BackgroundServices;
 using FoodOrderBot.API.Hubs;
 using FoodOrderBot.API.Middleware;
 using FoodOrderBot.Application.Contracts;
+using FoodOrderBot.Application.Orders;
 using FoodOrderBot.Domain.Interfaces;
+using FoodOrderBot.Infrastructure.AI;
+using FoodOrderBot.Infrastructure.AI.Plugins;
+using FoodOrderBot.Infrastructure.Facebook;
 using FoodOrderBot.Infrastructure.Persistence;
 using FoodOrderBot.Infrastructure.Persistence.Repositories;
 using FoodOrderBot.Infrastructure.SemanticKernel;
@@ -72,16 +77,31 @@ builder.Services.AddCors(options =>
 });
 
 // ─── Controllers + OpenAPI ───────────────────────────────────────────────────
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(opt =>
+        opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 builder.Services.AddOpenApi();
 
 // ─── Repositories ───────────────────────────────────────────────────────────
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IRawMessageRepository, RawMessageRepository>();
+builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 // ─── Application Services ────────────────────────────────────────────────────
 builder.Services.AddScoped<IMessageParser, MessageParserService>();
-// IOrderService + IMessengerReply → Sprint 3
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddHttpClient<IMessengerReply, MessengerClient>();
+
+// ─── AI Services ─────────────────────────────────────────────────────────────
+builder.Services.AddSingleton<AiKernelFactory>();
+builder.Services.AddScoped<IntentClassifierPlugin>();
+builder.Services.AddScoped<OrderParserPlugin>();
+builder.Services.AddScoped<ChatBotPlugin>();
+builder.Services.AddScoped<UpsellPlugin>();
+builder.Services.AddScoped<SentimentPlugin>();
+builder.Services.AddScoped<IAiOrchestrator, AiOrchestrator>();
+builder.Services.AddScoped<IConversationRepository, ConversationRepository>();
 
 // ─── DB Initializer ──────────────────────────────────────────────────────────
 builder.Services.AddScoped<DbInitializer>();

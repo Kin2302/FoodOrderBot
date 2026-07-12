@@ -26,6 +26,7 @@ public class OrderRepository(AppDbContext db) : IOrderRepository
             .Where(o => o.ShopId == shopId)
             .Include(o => o.Items)
             .Include(o => o.Customer)
+            .Include(o => o.RawMessage)
             .OrderByDescending(o => o.CreatedAt)
             .ToListAsync(ct);
 

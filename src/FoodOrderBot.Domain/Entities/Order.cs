@@ -15,10 +15,13 @@ public class Order
     public string ReceiverPhone { get; set; } = string.Empty;
     public string DeliveryAddress { get; set; } = string.Empty;
 
-    // Thanh toán
+    // Thông tin giao hàng
     public string PaymentMethod { get; set; } = "COD";
     public PaymentStatus PaymentStatus { get; set; } = PaymentStatus.Unpaid;
     public decimal TotalAmount { get; set; }
+
+    /// <summary>Ghi chú chung của đơn hàng (từ khách hoặc chủ quán sửa).</summary>
+    public string? Note { get; set; }
 
     /// <summary>
     /// Token ngẫu nhiên 32-byte — dùng để tạo link tracking public cho khách.

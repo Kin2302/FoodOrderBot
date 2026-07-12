@@ -22,6 +22,46 @@ namespace FoodOrderBot.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("FoodOrderBot.Domain.Entities.ConversationMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FbSenderId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Intent")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<Guid>("ShopId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShopId");
+
+                    b.HasIndex("FbSenderId", "CreatedAt")
+                        .HasDatabaseName("IX_ConversationMessages_FbSenderId_CreatedAt");
+
+                    b.ToTable("ConversationMessages");
+                });
+
             modelBuilder.Entity("FoodOrderBot.Domain.Entities.Customer", b =>
                 {
                     b.Property<Guid>("Id")
@@ -107,6 +147,9 @@ namespace FoodOrderBot.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("text");
 
                     b.Property<string>("PaymentMethod")
                         .IsRequired()
@@ -288,6 +331,17 @@ namespace FoodOrderBot.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Shops");
+                });
+
+            modelBuilder.Entity("FoodOrderBot.Domain.Entities.ConversationMessage", b =>
+                {
+                    b.HasOne("FoodOrderBot.Domain.Entities.Shop", "Shop")
+                        .WithMany()
+                        .HasForeignKey("ShopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Shop");
                 });
 
             modelBuilder.Entity("FoodOrderBot.Domain.Entities.MenuItem", b =>

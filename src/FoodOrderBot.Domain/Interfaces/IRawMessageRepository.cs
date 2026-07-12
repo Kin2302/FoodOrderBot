@@ -9,5 +9,11 @@ public interface IRawMessageRepository
     /// </summary>
     Task<bool> ExistsByFbMessageIdAsync(string fbMessageId, CancellationToken ct = default);
     Task AddAsync(RawMessage rawMessage, CancellationToken ct = default);
+
+    /// <summary>
+    /// Cập nhật RawMessage (lưu ParsedResult, ParseConfidence sau khi AI xử lý xong)
+    /// </summary>
+    Task UpdateAsync(RawMessage rawMessage, CancellationToken ct = default);
+
     Task SaveChangesAsync(CancellationToken ct = default);
 }

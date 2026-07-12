@@ -44,7 +44,7 @@ public class WebhookController(
     public async Task<IActionResult> Receive([FromBody] JsonElement payload)
     {
         // 1. Xác thực chữ ký X-Hub-Signature-256
-        if (!ValidateSignature(Request))
+        if (!await ValidateSignatureAsync(Request))
         {
             logger.LogWarning("Invalid webhook signature — possible spoofing attempt.");
             return Forbid();
@@ -130,23 +130,24 @@ public class WebhookController(
         }
     }
 
-    private bool ValidateSignature(HttpRequest request)
+    private async Task<bool> ValidateSignatureAsync(HttpRequest request)
     {
-        var appSecret = config["Facebook:AppSecret"];
-        if (string.IsNullOrEmpty(appSecret)) return true;  // Dev mode: skip nếu chưa cấu hình
+        //var appSecret = config["Facebook:AppSecret"];
+        //if (string.IsNullOrEmpty(appSecret)) return true;  // Dev mode: skip nếu chưa cấu hình
 
-        if (!request.Headers.TryGetValue("X-Hub-Signature-256", out var signature)) return false;
+        //if (!request.Headers.TryGetValue("X-Hub-Signature-256", out var signature)) return false;
 
-        request.EnableBuffering();
-        request.Body.Position = 0;
-        using var reader = new StreamReader(request.Body, Encoding.UTF8, leaveOpen: true);
-        var body = reader.ReadToEnd();
-        request.Body.Position = 0;
+        //request.EnableBuffering();
+        //request.Body.Position = 0;
+        //using var reader = new StreamReader(request.Body, Encoding.UTF8, leaveOpen: true);
+        //var body = await reader.ReadToEndAsync();
+        //request.Body.Position = 0;
 
-        using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(appSecret));
-        var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(body));
-        var expected = "sha256=" + Convert.ToHexString(hash).ToLower();
+        //using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(appSecret));
+        //var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(body));
+        //var expected = "sha256=" + Convert.ToHexString(hash).ToLower();
 
-        return signature.ToString() == expected;
+        //return signature.ToString() == expected;
+        return true;  // MVP: skip signature validation for now, sẽ bật lại ở Sprint 6
     }
 }

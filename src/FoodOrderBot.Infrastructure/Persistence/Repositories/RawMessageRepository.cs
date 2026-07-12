@@ -13,6 +13,12 @@ public class RawMessageRepository(AppDbContext db) : IRawMessageRepository
     public async Task AddAsync(RawMessage rawMessage, CancellationToken ct = default)
         => await db.RawMessages.AddAsync(rawMessage, ct);
 
+    public Task UpdateAsync(RawMessage rawMessage, CancellationToken ct = default)
+    {
+        db.RawMessages.Update(rawMessage);
+        return Task.CompletedTask;
+    }
+
     public async Task SaveChangesAsync(CancellationToken ct = default)
         => await db.SaveChangesAsync(ct);
 }

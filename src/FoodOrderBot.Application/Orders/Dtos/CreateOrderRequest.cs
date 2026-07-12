@@ -32,5 +32,6 @@ public class UpdateOrderRequest
     public string? ReceiverPhone { get; set; }
     public string? DeliveryAddress { get; set; }
     public string? PaymentMethod { get; set; }
+    public string? Note { get; set; }
     public List<CreateOrderItemRequest>? Items { get; set; }
 }

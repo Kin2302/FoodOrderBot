@@ -15,6 +15,7 @@ public class OrderDto
     public string TrackingToken { get; set; } = string.Empty;
     public float? ParseConfidence { get; set; }
     public List<string> UnclearParts { get; set; } = [];
+    public string? Note { get; set; }
     public List<OrderItemDto> Items { get; set; } = [];
     public string CustomerName { get; set; } = string.Empty;
     public string RawMessageContent { get; set; } = string.Empty;
