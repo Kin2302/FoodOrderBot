@@ -1,7 +1,7 @@
 /* App layout */
 .app-layout {
   display: flex;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
 }
 
@@ -14,99 +14,101 @@
   overflow: hidden;
 }
 
-/* Header */
+/* ─── Header ─────────────────────────────────────────────────────────────────  */
 .dashboard__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 28px;
+  padding: 22px 28px;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
   background: var(--bg);
   gap: 16px;
   flex-wrap: wrap;
+  animation: slideUp var(--duration-base) var(--ease-spring);
+}
+
+.dashboard__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .dashboard__title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin: 0 0 2px;
-  letter-spacing: -0.02em;
+  margin: 0;
+  letter-spacing: -0.03em;
 }
 
 .dashboard__subtitle {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin: 0;
 }
 
+/* ─── Stat Chips ─────────────────────────────────────────────────────────────  */
 .dashboard__stats {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* Stat chips */
 .stat-chip {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 10px 18px;
-  min-width: 90px;
-  transition: transform 0.15s;
+  padding: 10px 20px;
+  min-width: 96px;
+  transition: background var(--duration-fast) var(--ease-out);
+  position: relative;
+}
+
+.stat-chip + .stat-chip {
+  border-left: 1px solid var(--border);
 }
 
 .stat-chip:hover {
-  transform: translateY(-2px);
+  background: var(--surface);
 }
 
 .stat-chip--warning {
-  border-color: rgba(245, 158, 11, 0.3);
-  background: rgba(245, 158, 11, 0.05);
+  background: rgba(245, 158, 11, 0.04);
 }
 
 .stat-chip--success {
-  border-color: rgba(16, 185, 129, 0.3);
-  background: rgba(16, 185, 129, 0.05);
+  background: rgba(16, 185, 129, 0.04);
 }
 
 .stat-chip__value {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .stat-chip--warning .stat-chip__value { color: var(--warning); }
-.stat-chip--success .stat-chip__value { color: var(--success); }
+.stat-chip--success .stat-chip__value  { color: var(--success); }
 
 .stat-chip__label {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
-  margin-top: 3px;
+  margin-top: 4px;
   font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-/* Board container */
-.dashboard__board {
-  flex: 1;
-  padding: 0 28px 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ─── Toolbar (Filter + Search) ──────────────────────────── */
-
+/* ─── Toolbar (Filter + Search) ──────────────────────────────────────────────  */
 .dashboard__toolbar {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 28px;
+  padding: 12px 28px;
   border-bottom: 1px solid var(--border);
   background: var(--bg);
   flex-wrap: wrap;
@@ -124,49 +126,59 @@
 .filter-tab {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: 8px;
-  padding: 5px 11px;
-  color: var(--text-secondary);
-  font-size: 0.78rem;
+  padding: 5px 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: background var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-spring);
   white-space: nowrap;
+  font-family: inherit;
 }
 
 .filter-tab:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-dim);
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+.filter-tab:active {
+  transform: scale(0.97);
 }
 
 .filter-tab--active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  background: var(--accent-dim);
+  border-color: var(--accent-border);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .filter-tab--active:hover {
-  background: #5558e8;
-  color: #fff;
+  background: var(--accent-dim);
+  color: var(--accent);
 }
 
 .filter-tab__count {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 99px;
   padding: 1px 6px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   min-width: 18px;
   text-align: center;
+  line-height: 1.6;
 }
 
 .filter-tab:not(.filter-tab--active) .filter-tab__count {
-  background: var(--surface);
+  background: var(--border);
   color: var(--text-muted);
 }
 
@@ -178,19 +190,23 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 6px 12px;
+  padding: 7px 12px;
   margin-left: auto;
-  min-width: 220px;
-  transition: border-color 0.15s;
+  min-width: 230px;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .search-box:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-dim);
+  box-shadow: 0 0 0 3px var(--accent-dim), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .search-box__icon {
-  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
 }
 
@@ -200,6 +216,7 @@
   outline: none;
   color: var(--text-primary);
   font-size: 0.85rem;
+  font-family: inherit;
   flex: 1;
   min-width: 0;
 }
@@ -208,20 +225,37 @@
   color: var(--text-muted);
 }
 
+/* Remove default search clear button in browsers */
+.search-box__input::-webkit-search-cancel-button {
+  display: none;
+}
+
 .search-box__clear {
   background: transparent;
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.75rem;
-  padding: 2px;
+  padding: 3px;
   border-radius: 4px;
-  transition: color 0.15s;
   display: flex;
   align-items: center;
+  transition: color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-spring);
 }
 
 .search-box__clear:hover {
   color: var(--danger);
 }
 
+.search-box__clear:active {
+  transform: scale(0.9);
+}
+
+/* ─── Board container ─────────────────────────────────────────────────────────  */
+.dashboard__board {
+  flex: 1;
+  padding: 0 24px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

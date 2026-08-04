@@ -30,6 +30,15 @@ public class OrderRepository(AppDbContext db) : IOrderRepository
             .OrderByDescending(o => o.CreatedAt)
             .ToListAsync(ct);
 
+    public async Task<IEnumerable<Order>> GetByShopIdAndDateRangeAsync(
+        Guid shopId, DateTime from, DateTime to, CancellationToken ct = default)
+        => await db.Orders
+            .Where(o => o.ShopId == shopId && o.CreatedAt >= from && o.CreatedAt <= to)
+            .Include(o => o.Items)
+                .ThenInclude(i => i.MenuItem)
+            .AsNoTracking()
+            .ToListAsync(ct);
+
     public async Task AddAsync(Order order, CancellationToken ct = default)
         => await db.Orders.AddAsync(order, ct);
 

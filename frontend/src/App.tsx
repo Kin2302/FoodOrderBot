@@ -6,6 +6,8 @@ import DashboardPage from './pages/DashboardPage';
 import MenuPage from './pages/MenuPage';
 import TrackPage from './pages/TrackPage';
 import AiTestPage from './pages/AiTestPage';
+import AnalyticsPage from './pages/AnalyticsPage';
+import ComplaintsPage from './pages/ComplaintsPage';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -29,6 +31,8 @@ export default function App() {
           {/* Protected routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/analytics" element={<AnalyticsPage />} />
+            <Route path="/complaints" element={<ComplaintsPage />} />
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/ai-test" element={<AiTestPage />} />
           </Route>

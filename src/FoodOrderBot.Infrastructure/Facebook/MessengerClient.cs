@@ -18,7 +18,10 @@ public class MessengerClient(
     private const string GraphApiVersion = "v21.0";
     private const string BaseUrl = $"https://graph.facebook.com/{GraphApiVersion}/me/messages";
 
-    public async Task SendTextAsync(string fbSenderId, string message, string pageAccessToken, CancellationToken ct = default)
+    public async Task SendTextAsync(string fbSenderId, 
+                                    string message, 
+                                    string pageAccessToken, 
+                                    CancellationToken ct = default)
     {
         var payload = new
         {
@@ -30,7 +33,11 @@ public class MessengerClient(
         await SendAsync(payload, pageAccessToken, ct);
     }
 
-    public async Task SendTrackingLinkAsync(string fbSenderId, string orderId, string trackingToken, string pageAccessToken, CancellationToken ct = default)
+    public async Task SendTrackingLinkAsync(string fbSenderId, 
+                                            string orderId, 
+                                            string trackingToken, 
+                                            string pageAccessToken, 
+                                            CancellationToken ct = default)
     {
         var frontendBaseUrl = config["Facebook:FrontendBaseUrl"] ?? "http://localhost:5173";
         var trackingUrl = $"{frontendBaseUrl}/track/{trackingToken}";

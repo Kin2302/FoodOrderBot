@@ -166,12 +166,22 @@ public class OrderController(
         {
             order.Id,
             order.Status,
-            order.ReceiverName,
-            order.DeliveryAddress,
+            order.PaymentStatus,
             order.TotalAmount,
-            order.Items,
+            order.Note,
+            order.ReceiverName,
             order.CreatedAt,
-            order.UpdatedAt
+            order.UpdatedAt,
+            Items = order.Items.Select(i => new
+            {
+                i.Id,
+                i.MenuItemId,
+                i.ItemName,
+                i.UnitPrice,
+                i.Quantity,
+                i.Note,
+                Subtotal = i.UnitPrice * i.Quantity
+            })
         });
     }
 }

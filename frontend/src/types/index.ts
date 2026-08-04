@@ -87,12 +87,24 @@ export interface MenuItem {
 export interface AuthResult {
   token: string;
   expiresAt: string;
-  email: string;
+  shopId: string; // decode từ JWT, không phải từ response
 }
 
 export interface LoginRequest {
   email: string;
   password: string;
+}
+
+export interface FacebookPage {
+  pageId: string;
+  pageName: string;
+  pictureUrl: string | null;
+}
+
+export interface SelectPageRequest {
+  pageId: string;
+  pageAccessToken: string;
+  pageName: string;
 }
 
 export interface CreateMenuItemRequest {
@@ -157,3 +169,79 @@ export interface AiTestRequest {
   shopId: string;
   fbSenderId?: string;
 }
+
+// ── Analytics Types ──────────────────────────────────────────────────────────
+
+export interface DailyRevenue {
+  date: string;
+  revenue: number;
+  orderCount: number;
+}
+
+export interface TopMenuItem {
+  name: string;
+  totalQuantity: number;
+  totalRevenue: number;
+}
+
+export interface HourlyDistribution {
+  hour: number;
+  orderCount: number;
+}
+
+export interface OrderStatusBreakdown {
+  status: string;
+  count: number;
+}
+
+export interface AnalyticsSummary {
+  totalRevenue: number;
+  totalOrders: number;
+  completedOrders: number;
+  cancelledOrders: number;
+  averageOrderValue: number;
+  dailyRevenue: DailyRevenue[];
+  topMenuItems: TopMenuItem[];
+  hourlyDistribution: HourlyDistribution[];
+  statusBreakdown: OrderStatusBreakdown[];
+}
+
+export interface IntentDistribution {
+  intent: string;
+  count: number;
+}
+
+export interface AiStats {
+  totalMessages: number;
+  parsedSuccessfully: number;
+  needsClarification: number;
+  averageConfidence: number;
+  intentDistribution: IntentDistribution[];
+  complaintsTotal: number;
+  complaintsNeedingAttention: number;
+}
+
+// ── Complaint Types ──────────────────────────────────────────────────────────
+
+export interface Complaint {
+  id: string;
+  fbSenderId: string;
+  content: string;
+  sentimentLabel: string | null;
+  sentimentScore: number | null;
+  needsAttention: boolean;
+  createdAt: string;
+}
+
+export interface ConversationMessage {
+  role: string;
+  content: string;
+  intent: string | null;
+  createdAt: string;
+}
+
+export interface ConversationHistory {
+  fbSenderId: string;
+  messages: ConversationMessage[];
+}
+

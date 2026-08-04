@@ -1,15 +1,17 @@
 import { useEffect, useRef } from 'react';
 import * as signalR from '@microsoft/signalr';
+import { useQueryClient } from '@tanstack/react-query';
 import { useAuthStore } from '../store/authStore';
 import { useOrdersStore } from '../store/ordersStore';
-import type { Order, OrderStatus } from '../types';
+import type { OrderStatus } from '../types';
 
 const HUB_URL = import.meta.env.VITE_HUB_URL;
 
 export function useSignalR() {
   const connectionRef = useRef<signalR.HubConnection | null>(null);
   const token = useAuthStore((s) => s.token);
-  const { addOrder, updateOrderStatus } = useOrdersStore();
+  const { updateOrderStatus } = useOrdersStore();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     if (!token) return;
@@ -23,11 +25,12 @@ export function useSignalR() {
       .configureLogging(signalR.LogLevel.Warning)
       .build();
 
-    // Nhận Draft Order mới từ AI parse
-    connection.on('NewDraftOrder', (order: Order) => {
-      addOrder(order);
+    // Nhận Draft Order mới từ AI parse (backend emit 'NewOrderReceived')
+    connection.on('NewOrderReceived', (payload: { orderId: string; customerName?: string; totalAmount?: number }) => {
+      // Refetch toàn bộ danh sách để có đầy đủ data
+      queryClient.invalidateQueries({ queryKey: ['orders'] });
       // Hiển thị toast notification
-      showToast(`🆕 Đơn mới từ ${order.customerName || 'Khách'}!`);
+      showToast(`🆕 Đơn mới từ ${payload.customerName || 'Khách'}!`);
     });
 
     // Nhận cập nhật trạng thái đơn
@@ -45,7 +48,7 @@ export function useSignalR() {
     return () => {
       connection.stop();
     };
-  }, [token, addOrder, updateOrderStatus]);
+  }, [token, updateOrderStatus, queryClient]);
 
   return connectionRef.current;
 }

@@ -1,10 +1,6 @@
 namespace FoodOrderBot.Application.Auth;
 
-public class LoginRequest
-{
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
-}
+
 
 public class AuthResult
 {
@@ -15,4 +11,30 @@ public class AuthResult
 
     public static AuthResult Fail(string message) => new() { Success = false, ErrorMessage = message };
     public static AuthResult Ok(string token, DateTime expiresAt) => new() { Success = true, Token = token, ExpiresAt = expiresAt };
+}
+public class FacebookAuthRequest 
+{
+    public string UserAccessToken { get; set; } = string.Empty;
+}
+
+public class FacebookPageDto 
+{ 
+    public string PageId { get; set; } = string.Empty; 
+    public string PageName { get; set; } = string.Empty; 
+    public string? PictureUrl { get; set; } = string.Empty; 
+    public string PageAccessToken { get; set; } = string.Empty; 
+}
+public class FacebookPageResponse
+{
+    public string PageId { get; set; } = string.Empty;
+    public string PageName { get; set; } = string.Empty;
+    public string? PictureUrl { get; set; } = string.Empty;
+
+}
+
+public class SelectPageRequest 
+{ 
+    public string PageId { get; set; } = string.Empty; 
+    public string PageAccessToken { get; set; } = string.Empty; 
+    public string PageName { get; set; } = string.Empty; 
 }

@@ -2,6 +2,8 @@ import api from './axios';
 import type {
   AuthResult,
   LoginRequest,
+  FacebookPage,
+  SelectPageRequest,
   MenuItem,
   Order,
   CreateMenuItemRequest,
@@ -11,11 +13,21 @@ import type {
   TrackOrderResult,
   AiResponse,
   AiTestRequest,
+  AnalyticsSummary,
+  AiStats,
+  Complaint,
+  ConversationHistory,
 } from '../types';
 
 // ─── Auth ────────────────────────────────────────────────
 export const login = (data: LoginRequest) =>
   api.post<AuthResult>('/api/auth/login', data).then((r) => r.data);
+
+export const facebookAuth = (userAccessToken: string) =>
+  api.post<FacebookPage[]>('/api/auth/facebook', { userAccessToken }).then((r) => r.data);
+
+export const selectPage = (data: SelectPageRequest) =>
+  api.post<AuthResult>('/api/auth/facebook/select', data).then((r) => r.data);
 
 // ─── Orders ──────────────────────────────────────────────
 export const getOrders = () =>
@@ -55,3 +67,18 @@ export const deleteMenuItem = (id: string) =>
 // ─── AI ───────────────────────────────────────────────────
 export const testAi = (data: AiTestRequest) =>
   api.post<AiResponse>('/api/ai/test', data).then((r) => r.data);
+
+// ─── Analytics ────────────────────────────────────────────
+export const getAnalyticsSummary = (days = 30) =>
+  api.get<AnalyticsSummary>(`/api/analytics/summary?days=${days}`).then((r) => r.data);
+
+export const getAiStats = (days = 30) =>
+  api.get<AiStats>(`/api/analytics/ai-stats?days=${days}`).then((r) => r.data);
+
+// ─── Complaints ───────────────────────────────────────────
+export const getComplaints = (limit = 50) =>
+  api.get<Complaint[]>(`/api/complaints?limit=${limit}`).then((r) => r.data);
+
+export const getConversationHistory = (senderId: string) =>
+  api.get<ConversationHistory>(`/api/conversations/${senderId}`).then((r) => r.data);
+

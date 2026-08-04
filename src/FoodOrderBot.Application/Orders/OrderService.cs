@@ -48,7 +48,7 @@ public class OrderService(
         };
 
         await orderRepo.AddAsync(order, ct);
-        await orderRepo.SaveChangesAsync(ct);
+        //await orderRepo.SaveChangesAsync(ct);
 
         logger.LogInformation("Draft order {OrderId} created for shop {ShopId}", order.Id, order.ShopId);
 

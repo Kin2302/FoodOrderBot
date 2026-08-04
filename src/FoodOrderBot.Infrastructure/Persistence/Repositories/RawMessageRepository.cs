@@ -19,6 +19,13 @@ public class RawMessageRepository(AppDbContext db) : IRawMessageRepository
         return Task.CompletedTask;
     }
 
+    public async Task<IEnumerable<RawMessage>> GetByShopIdAndDateRangeAsync(
+        Guid shopId, DateTime from, DateTime to, CancellationToken ct = default)
+        => await db.RawMessages
+            .Where(r => r.ShopId == shopId && r.CreatedAt >= from && r.CreatedAt <= to)
+            .AsNoTracking()
+            .ToListAsync(ct);
+
     public async Task SaveChangesAsync(CancellationToken ct = default)
         => await db.SaveChangesAsync(ct);
 }

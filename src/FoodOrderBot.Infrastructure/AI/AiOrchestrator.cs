@@ -46,8 +46,11 @@ public class AiOrchestrator(
             _                   => await HandleGeneralAsync(intent, request, history, ct),
         };
 
-        // ── 4. Lưu hội thoại vào DB ─────────────────────────────────────────────
-        await SaveConversationAsync(request, response, intent, ct);
+        // ── 4. Lưu hội thoại vào DB (Complaint đã tự lưu kèm sentiment) ─────
+        if (intent != AiIntent.Complaint)
+        {
+            await SaveConversationAsync(request, response, intent, ct);
+        }
 
         return response;
     }
@@ -124,13 +127,18 @@ public class AiOrchestrator(
                 request.FbSenderId, sentiment.Score);
         }
 
-        return new AiResponse
+        var response = new AiResponse
         {
             Intent = AiIntent.Complaint,
             ReplyText = reply,
             Sentiment = sentiment,
             Confidence = 1.0
         };
+
+        // Lưu hội thoại kèm sentiment data
+        await SaveConversationAsync(request, response, AiIntent.Complaint, ct, sentiment);
+
+        return response;
     }
 
     private async Task<AiResponse> HandleGeneralAsync(
@@ -158,11 +166,12 @@ public class AiOrchestrator(
         AiRequest request,
         AiResponse response,
         AiIntent intent,
-        CancellationToken ct)
+        CancellationToken ct,
+        Application.AI.SentimentResult? sentiment = null)
     {
         try
         {
-            // Lưu tin của user
+            // Lưu tin của user (kèm sentiment nếu là complaint)
             await conversationRepo.AddAsync(new ConversationMessage
             {
                 Id = Guid.NewGuid(),
@@ -171,6 +180,9 @@ public class AiOrchestrator(
                 Role = "User",
                 Content = request.Content,
                 Intent = intent.ToString(),
+                SentimentLabel = sentiment?.Label,
+                SentimentScore = sentiment?.Score,
+                NeedsAttention = sentiment?.NeedsAttention ?? false,
                 CreatedAt = DateTime.UtcNow
             }, ct);
 

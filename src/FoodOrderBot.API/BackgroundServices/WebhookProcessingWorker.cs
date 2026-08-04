@@ -3,6 +3,7 @@ using FoodOrderBot.API.Hubs;
 using FoodOrderBot.Application.AI;
 using FoodOrderBot.Application.Contracts;
 using FoodOrderBot.Application.Orders.Dtos;
+using FoodOrderBot.Application.Parsing;
 using FoodOrderBot.Domain.Entities;
 using FoodOrderBot.Domain.Enums;
 using FoodOrderBot.Domain.Interfaces;
@@ -22,7 +23,7 @@ public class WebhookProcessingWorker(
     IHubContext<OrderHub> hubContext,
     ILogger<WebhookProcessingWorker> logger) : BackgroundService
 {
-    private const float ConfidenceThreshold = 0.8f;
+    private const double ConfidenceThreshold = 0.8;
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -37,7 +38,6 @@ public class WebhookProcessingWorker(
             catch (Exception ex)
             {
                 logger.LogError(ex, "Lỗi khi xử lý webhook: FbMessageId={FbMessageId}", task.FbMessageId);
-                // Không throw — worker tiếp tục chạy với task tiếp theo
             }
         }
     }
@@ -56,9 +56,7 @@ public class WebhookProcessingWorker(
         var db = sp.GetRequiredService<AppDbContext>();
         var config = sp.GetRequiredService<IConfiguration>();
 
-        // ──────────────────────────────────────────────────────────────────────
-        // Bước 1: Dedup — kiểm tra FbMessageId đã xử lý chưa
-        // ──────────────────────────────────────────────────────────────────────
+        // 1. Dedup — Kiểm tra nhanh không cần Transaction
         if (await rawMsgRepo.ExistsByFbMessageIdAsync(task.FbMessageId, ct))
         {
             logger.LogInformation("[Worker] Dedup: FbMessageId={FbId} đã tồn tại, skip.", task.FbMessageId);
@@ -69,139 +67,135 @@ public class WebhookProcessingWorker(
             "[Worker] Processing: Source={Source} | FbMessageId={FbId} | Content={Content}",
             task.Source, task.FbMessageId, task.Content[..Math.Min(50, task.Content.Length)]);
 
-        // ──────────────────────────────────────────────────────────────────────
-        // Bước 2: Upsert Customer
-        // ──────────────────────────────────────────────────────────────────────
-        var customer = await customerRepo.GetByFbSenderIdAsync(task.FbSenderId, ct);
-        if (customer is null)
-        {
-            customer = new Customer
-            {
-                Id = Guid.NewGuid(),
-                FbSenderId = task.FbSenderId,
-                Name = $"Khách {task.FbSenderId[..Math.Min(6, task.FbSenderId.Length)]}",
-                CreatedAt = DateTime.UtcNow
-            };
-            await customerRepo.AddAsync(customer, ct);
-            await customerRepo.SaveChangesAsync(ct);
-            logger.LogInformation("[Worker] New customer created: {CustomerId}", customer.Id);
-        }
-
-        // ──────────────────────────────────────────────────────────────────────
-        // Bước 3: Lưu RawMessage
-        // ──────────────────────────────────────────────────────────────────────
-        var rawMessage = new RawMessage
-        {
-            Id = Guid.NewGuid(),
-            ShopId = task.ShopId,
-            FbSenderId = task.FbSenderId,
-            FbMessageId = task.FbMessageId,
-            FbPostId = task.FbPostId,
-            FbCommentId = task.FbCommentId,
-            Source = Enum.Parse<MessageSource>(task.Source, ignoreCase: true),
-            Content = task.Content,
-            CreatedAt = DateTime.UtcNow
-        };
-        await rawMsgRepo.AddAsync(rawMessage, ct);
-        await rawMsgRepo.SaveChangesAsync(ct);
-
-        // ──────────────────────────────────────────────────────────────────────
-        // Bước 4: AI Orchestrator — classify intent + route
-        // ──────────────────────────────────────────────────────────────────────
+        // 2. Gọi AI Orchestrator (Xử lý ngoài DB)
         var aiResponse = await orchestrator.ProcessMessageAsync(
             new AiRequest(task.FbSenderId, task.ShopId, task.Content, task.Source), ct);
 
         logger.LogInformation("[Worker] AI done: Intent={Intent} | Confidence={Confidence}",
             aiResponse.Intent, aiResponse.Confidence);
 
-        // Lưu kết quả parse vào RawMessage (kể cả khi confidence thấp — để fine-tune sau)
-        if (aiResponse.ParseResult is not null)
+        OrderDto? createdOrderDto = null;
+
+        using (var transaction = await db.Database.BeginTransactionAsync(ct))
         {
-            rawMessage.ParsedResult = JsonSerializer.Serialize(aiResponse.ParseResult);
-            rawMessage.ParseConfidence = (float)aiResponse.ParseResult.Confidence;
-            await rawMsgRepo.UpdateAsync(rawMessage, ct);
-            await rawMsgRepo.SaveChangesAsync(ct);
+            try
+            {
+                var customer = await customerRepo.GetByFbSenderIdAsync(task.FbSenderId, ct);
+                if (customer is null)
+                {
+                    customer = new Customer
+                    {
+                        Id = Guid.NewGuid(),
+                        FbSenderId = task.FbSenderId,
+                        Name = $"Khách {task.FbSenderId[..Math.Min(6, task.FbSenderId.Length)]}",
+                        CreatedAt = DateTime.UtcNow
+                    };
+                    await customerRepo.AddAsync(customer, ct);
+                    logger.LogInformation("[Worker] New customer created: {CustomerId}", customer.Id);
+                }
+
+                var rawMessage = new RawMessage
+                {
+                    Id = Guid.NewGuid(),
+                    ShopId = task.ShopId,
+                    FbSenderId = task.FbSenderId,
+                    FbMessageId = task.FbMessageId,
+                    FbPostId = task.FbPostId,
+                    FbCommentId = task.FbCommentId,
+                    Source = Enum.Parse<MessageSource>(task.Source, ignoreCase: true),
+                    Content = task.Content,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                if (aiResponse.ParseResult is not null)
+                {
+                    rawMessage.ParsedResult = JsonSerializer.Serialize(aiResponse.ParseResult);
+                    rawMessage.ParseConfidence = (float)aiResponse.ParseResult.Confidence;
+                }
+
+                await rawMsgRepo.AddAsync(rawMessage, ct);
+
+                if (aiResponse.Intent == AiIntent.PlaceOrder &&
+                    aiResponse.ParseResult is { Confidence: >= ConfidenceThreshold } parseResult &&
+                    parseResult.Items.Count > 0)
+                {
+                    var orderItems = await MapParsedItemsAsync(parseResult, task.ShopId, menuItemRepo, ct);
+
+                    var createRequest = new CreateOrderRequest
+                    {
+                        ShopId = task.ShopId,
+                        CustomerId = customer.Id,
+                        RawMessageId = rawMessage.Id,
+                        ReceiverName = parseResult.ReceiverName ?? customer.Name,
+                        ReceiverPhone = parseResult.ReceiverPhone ?? "",
+                        DeliveryAddress = parseResult.DeliveryAddress ?? "",
+                        TotalAmount = orderItems.Sum(i => i.UnitPrice * i.Quantity),
+                        ParseConfidence = (float)parseResult.Confidence,
+                        UnclearParts = parseResult.UnclearParts,
+                        Items = orderItems
+                    };
+
+                    createdOrderDto = await orderService.CreateDraftAsync(createRequest, ct);
+                    logger.LogInformation("[Worker] Draft Order created: {OrderId} | Total={Total}",
+                        createdOrderDto.Id, createdOrderDto.TotalAmount);
+                }
+
+                await db.SaveChangesAsync(ct);
+                await transaction.CommitAsync(ct);
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync(ct);
+                throw; 
+            }
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // Bước 5: Xử lý theo Intent
-        // ──────────────────────────────────────────────────────────────────────
-
-        // Lấy Page Access Token
+        // 4. Xử lý Side-effects (SignalR + Facebook Reply) SAU KHi DB ĐÃ COMMIT AN TOÀN
         var shop = await db.Shops.AsNoTracking().FirstOrDefaultAsync(s => s.Id == task.ShopId, ct);
         var pageAccessToken = !string.IsNullOrEmpty(shop?.FbAccessToken)
             ? shop.FbAccessToken
             : config["Facebook:PageAccessToken"] ?? "";
 
-        switch (aiResponse.Intent)
+        if (createdOrderDto is not null)
         {
-            case AiIntent.PlaceOrder when aiResponse.ParseResult is { Confidence: >= ConfidenceThreshold } parseResult
-                                          && parseResult.Items.Count > 0:
+            // Push SignalR về Dashboard
+            await hubContext.Clients.All.SendAsync("NewOrderReceived", new
             {
-                // ── Đơn hàng hợp lệ → Tạo Draft + SignalR + Tracking Link ──
-                var orderItems = await MapParsedItemsAsync(parseResult, task.ShopId, menuItemRepo, ct);
+                orderId = createdOrderDto.Id,
+                status = createdOrderDto.Status.ToString(),
+                customerName = createdOrderDto.CustomerName,
+                totalAmount = createdOrderDto.TotalAmount,
+                itemCount = createdOrderDto.Items.Count,
+                confidence = createdOrderDto.ParseConfidence,
+                createdAt = createdOrderDto.CreatedAt,
+                intent = aiResponse.Intent.ToString(),
+                upsellSuggestions = aiResponse.Suggestions
+            }, ct);
 
-                var createRequest = new CreateOrderRequest
-                {
-                    ShopId = task.ShopId,
-                    CustomerId = customer.Id,
-                    RawMessageId = rawMessage.Id,
-                    ReceiverName = parseResult.ReceiverName ?? customer.Name,
-                    ReceiverPhone = parseResult.ReceiverPhone ?? "",
-                    DeliveryAddress = parseResult.DeliveryAddress ?? "",
-                    TotalAmount = orderItems.Sum(i => i.UnitPrice * i.Quantity),
-                    ParseConfidence = (float)parseResult.Confidence,
-                    UnclearParts = parseResult.UnclearParts,
-                    Items = orderItems
-                };
-
-                var orderDto = await orderService.CreateDraftAsync(createRequest, ct);
-                logger.LogInformation("[Worker] Draft Order created: {OrderId} | Total={Total}",
-                    orderDto.Id, orderDto.TotalAmount);
-
-                // Push SignalR → Dashboard
-                await hubContext.Clients.All.SendAsync("NewOrderReceived", new
-                {
-                    orderId = orderDto.Id,
-                    status = orderDto.Status.ToString(),
-                    customerName = orderDto.CustomerName,
-                    totalAmount = orderDto.TotalAmount,
-                    itemCount = orderDto.Items.Count,
-                    confidence = orderDto.ParseConfidence,
-                    createdAt = orderDto.CreatedAt,
-                    // Thêm AI metadata
-                    intent = aiResponse.Intent.ToString(),
-                    upsellSuggestions = aiResponse.Suggestions
-                }, ct);
-
-                // Reply Messenger: tracking link + upsell (nếu có)
-                if (!string.IsNullOrEmpty(pageAccessToken))
-                {
-                    await messengerReply.SendTrackingLinkAsync(
-                        task.FbSenderId, orderDto.Id.ToString(), orderDto.TrackingToken, pageAccessToken, ct);
-                }
-                break;
+            // Gửi Tracking Link qua Messenger
+            if (!string.IsNullOrEmpty(pageAccessToken))
+            {
+                await messengerReply.SendTrackingLinkAsync(
+                    task.FbSenderId, createdOrderDto.Id.ToString(), createdOrderDto.TrackingToken, pageAccessToken, ct);
+            }
+        }
+        else
+        {
+            // Gửi câu trả lời thường cho các Intent khác
+            if (!string.IsNullOrEmpty(pageAccessToken) && !string.IsNullOrEmpty(aiResponse.ReplyText))
+            {
+                await messengerReply.SendTextAsync(task.FbSenderId, aiResponse.ReplyText, pageAccessToken, ct);
             }
 
-            default:
-            {
-                // ── Mọi intent khác (bao gồm PlaceOrder confidence thấp) → Reply text ──
-                if (!string.IsNullOrEmpty(pageAccessToken) && !string.IsNullOrEmpty(aiResponse.ReplyText))
-                {
-                    await messengerReply.SendTextAsync(task.FbSenderId, aiResponse.ReplyText, pageAccessToken, ct);
-                }
-
-                logger.LogInformation("[Worker] Sent reply for Intent={Intent}: {Reply}",
-                    aiResponse.Intent,
-                    aiResponse.ReplyText[..Math.Min(80, aiResponse.ReplyText.Length)]);
-                break;
-            }
+            logger.LogInformation("[Worker] Sent reply for Intent={Intent}: {Reply}",
+                aiResponse.Intent,
+                aiResponse.ReplyText[..Math.Min(80, aiResponse.ReplyText.Length)]);
         }
     }
 
     /// <summary>Map ParsedOrderItem từ AI → CreateOrderItemRequest, resolve giá từ DB.</summary>
     private static async Task<List<CreateOrderItemRequest>> MapParsedItemsAsync(
-        Application.Parsing.ParseResultDto parseResult,
+        ParseResultDto parseResult,
         Guid shopId,
         IMenuItemRepository menuItemRepo,
         CancellationToken ct)

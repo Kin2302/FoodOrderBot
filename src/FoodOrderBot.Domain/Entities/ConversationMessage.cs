@@ -21,6 +21,15 @@ public class ConversationMessage
     /// <summary>Intent đã classify (PlaceOrder, Greeting, ...) — null nếu là tin của AI</summary>
     public string? Intent { get; set; }
 
+    /// <summary>"positive" | "neutral" | "negative" — chỉ có khi Intent = Complaint</summary>
+    public string? SentimentLabel { get; set; }
+
+    /// <summary>Confidence score 0.0 – 1.0 — chỉ có khi Intent = Complaint</summary>
+    public double? SentimentScore { get; set; }
+
+    /// <summary>true → hiện cảnh báo trên Dashboard cho chủ quán</summary>
+    public bool NeedsAttention { get; set; }
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation

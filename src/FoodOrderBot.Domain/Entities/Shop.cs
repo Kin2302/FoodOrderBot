@@ -4,6 +4,8 @@ public class Shop
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
+    public string? FbOwnerUserId { get; set; }
+
     public string FbPageId { get; set; } = string.Empty;
     public string FbAccessToken { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;

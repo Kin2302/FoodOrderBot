@@ -483,3 +483,11 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# ─── Docs: chỉ giữ README, bỏ các .md nội bộ (AGENTS, TASKS, skills) ─────────
+*.md
+!README.md
+!**/README.md
+
+# ─── Visual Studio user-specific files ───────────────────────────────────────
+*.csproj.user

@@ -15,5 +15,7 @@ public interface IRawMessageRepository
     /// </summary>
     Task UpdateAsync(RawMessage rawMessage, CancellationToken ct = default);
 
+    Task<IEnumerable<RawMessage>> GetByShopIdAndDateRangeAsync(Guid shopId, DateTime from, DateTime to, CancellationToken ct = default);
+
     Task SaveChangesAsync(CancellationToken ct = default);
 }

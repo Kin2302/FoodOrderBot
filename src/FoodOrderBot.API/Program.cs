@@ -4,6 +4,7 @@ using FoodOrderBot.API.BackgroundServices;
 using FoodOrderBot.API.Hubs;
 using FoodOrderBot.API.Middleware;
 using FoodOrderBot.Application.Contracts;
+using FoodOrderBot.Application.Analytics;
 using FoodOrderBot.Application.Orders;
 using FoodOrderBot.Domain.Interfaces;
 using FoodOrderBot.Infrastructure.AI;
@@ -41,7 +42,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
         };
 
-        // Cho phép SignalR gửi JWT qua query string (vì JS không thể set header với WebSocket)
         options.Events = new JwtBearerEvents
         {
             OnMessageReceived = ctx =>
@@ -87,11 +87,15 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IRawMessageRepository, RawMessageRepository>();
 builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IShopRepository, ShopRepository>();
+
 
 // ─── Application Services ────────────────────────────────────────────────────
 builder.Services.AddScoped<IMessageParser, MessageParserService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
 builder.Services.AddHttpClient<IMessengerReply, MessengerClient>();
+builder.Services.AddHttpClient<IFacebookAuthService, FacebookAuthService>();
 
 // ─── AI Services ─────────────────────────────────────────────────────────────
 builder.Services.AddSingleton<AiKernelFactory>();

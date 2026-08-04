@@ -27,6 +27,35 @@ import EditOrderModal from '../components/EditOrderModal/EditOrderModal';
 import type { Order, OrderStatus } from '../types';
 import './DashboardPage.css';
 
+// ─── SVG Icons ───────────────────────────────────────────────────────────────
+function IconSearch() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
+function IconX() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  );
+}
+
+// ─── Filter Status Config ─────────────────────────────────────────────────────
+const STATUS_FILTERS = [
+  { value: 'All',       label: 'Tất cả' },
+  { value: 'Draft',     label: 'Chờ duyệt' },
+  { value: 'Confirmed', label: 'Xác nhận' },
+  { value: 'Preparing', label: 'Đang làm' },
+  { value: 'Completed', label: 'Hoàn thành' },
+  { value: 'Cancelled', label: 'Đã hủy' },
+] as const;
+
 export default function DashboardPage() {
   const queryClient = useQueryClient();
   const { orders, setOrders, updateOrderStatus: updateLocal } = useOrdersStore();
@@ -112,10 +141,10 @@ export default function DashboardPage() {
 
   // ─── Handlers ─────────────────────────────────────────────────────────────
 
-  const handleConfirm  = useCallback((id: string)    => confirmMutation.mutate(id),  [confirmMutation]);
-  const handleComplete = useCallback((id: string)    => completeMutation.mutate(id), [completeMutation]);
-  const handleCancel   = useCallback((id: string)    => cancelMutation.mutate(id),   [cancelMutation]);
-  const handleEdit     = useCallback((order: Order)  => setEditingOrder(order),       []);
+  const handleConfirm  = useCallback((id: string)   => confirmMutation.mutate(id),  [confirmMutation]);
+  const handleComplete = useCallback((id: string)   => completeMutation.mutate(id), [completeMutation]);
+  const handleCancel   = useCallback((id: string)   => cancelMutation.mutate(id),   [cancelMutation]);
+  const handleEdit     = useCallback((order: Order) => setEditingOrder(order),       []);
 
   // ─── Filter + Search ──────────────────────────────────────────────────────
 
@@ -161,7 +190,7 @@ export default function DashboardPage() {
       <main className="dashboard">
         {/* Header */}
         <header className="dashboard__header">
-          <div>
+          <div className="dashboard__header-left">
             <h1 className="dashboard__title">Dashboard</h1>
             <p className="dashboard__subtitle">Quản lý đơn hàng realtime</p>
           </div>
@@ -186,21 +215,17 @@ export default function DashboardPage() {
         {/* Filter & Search Bar */}
         <div className="dashboard__toolbar">
           <div className="filter-tabs">
-            {(['All', 'Draft', 'Confirmed', 'Preparing', 'Completed', 'Cancelled'] as const).map((s) => (
+            {STATUS_FILTERS.map(({ value, label }) => (
               <button
-                key={s}
-                id={`filter-${s.toLowerCase()}`}
-                className={`filter-tab ${statusFilter === s ? 'filter-tab--active' : ''}`}
-                onClick={() => setStatusFilter(s)}
+                key={value}
+                id={`filter-${value.toLowerCase()}`}
+                className={`filter-tab ${statusFilter === value ? 'filter-tab--active' : ''}`}
+                onClick={() => setStatusFilter(value)}
               >
-                {s === 'All' ? '🔍 Tất cả' :
-                 s === 'Draft'     ? '📋 Chờ duyệt' :
-                 s === 'Confirmed' ? '✅ Xác nhận' :
-                 s === 'Preparing' ? '🍳 Đang làm' :
-                 s === 'Completed' ? '🎉 Xong' : '❌ Hủy'}
-                {s !== 'All' && (
+                {label}
+                {value !== 'All' && (
                   <span className="filter-tab__count">
-                    {orders.filter((o) => o.status === s).length}
+                    {orders.filter((o) => o.status === value).length}
                   </span>
                 )}
               </button>
@@ -208,7 +233,9 @@ export default function DashboardPage() {
           </div>
 
           <div className="search-box">
-            <span className="search-box__icon">🔎</span>
+            <span className="search-box__icon">
+              <IconSearch />
+            </span>
             <input
               id="order-search"
               type="search"
@@ -218,7 +245,13 @@ export default function DashboardPage() {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             {searchQuery && (
-              <button className="search-box__clear" onClick={() => setSearchQuery('')}>✕</button>
+              <button
+                className="search-box__clear"
+                onClick={() => setSearchQuery('')}
+                aria-label="Xóa tìm kiếm"
+              >
+                <IconX />
+              </button>
             )}
           </div>
         </div>
@@ -242,7 +275,7 @@ export default function DashboardPage() {
             {/* Drag overlay */}
             <DragOverlay>
               {activeOrder && (
-                <div style={{ opacity: 0.9, transform: 'rotate(2deg)' }}>
+                <div style={{ opacity: 0.9, transform: 'rotate(1.5deg) scale(1.02)' }}>
                   <OrderCard order={activeOrder} />
                 </div>
               )}

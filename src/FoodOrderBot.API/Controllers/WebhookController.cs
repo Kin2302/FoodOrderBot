@@ -30,7 +30,7 @@ public class WebhookController(
         if (mode == "subscribe" && verifyToken == expectedToken)
         {
             logger.LogInformation("Facebook Webhook verified successfully.");
-            return Ok(challenge);  // Trả lại challenge để FB xác nhận
+            return Ok(challenge);  
         }
 
         logger.LogWarning("Webhook verification failed. Token mismatch.");
